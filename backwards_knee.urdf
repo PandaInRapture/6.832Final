@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+
+<robot name="backwards_knee">
+
+<!-- ground -->
+<!--just for visualization, it is welded to world -->
+<link name="ground">
+<visual>
+<origin xyz="0 0 -1"/>
+<geometry>
+<box size="10 1 .5" />
+</geometry>
+<material name="green">
+<color rgba="0 1 0 1" />
+</material>
+</visual>
+
+<collision>
+<origin xyz="0 0 -1"/>
+<geometry>
+<box size="10 1 .5" />
+</geometry>
+</collision>
+</link>
+
+<joint name="ground_is_world" type="fixed">
+<parent link="world" />
+<child link="ground" />
+</joint>
+
+<!-- lower leg -->
+<link name="lower leg">
+<inertial>
+<origin xyz="0 0 0" rpy= "0 1.25 0"/>
+<mass value=".1"/>
+<inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
+</inertial>
+
+<visual>
+<origin xyz = "0 0 0" rpy= "0 1.25 0"/>
+<geometry>
+<cylinder length="0.012" radius = "0.015"/>
+</geometry>
+<material name="green2">
+<color rgba = "0 1 0 0.5"/>
+</material>
+</visual>
+
+<collision>
+<origin xyz = "0 0 0" rpy= "0 1.25 0"/>
+<geometry>
+<cylinder length="0.012" radius = "0.015"/>
+</geometry>
+</collision>
+</link>
+
+<joint name="knee" type="continuous">
+<parent link="upper leg"/>
+<child link="lower leg"/>
+<origin xyz="0 0 0.06"/>
+<axis xyz="0 1 0" />
+<limit effort="100" velocity="1.57"/>
+</joint>
+
+<!-- upper leg -->
+<link name="upper leg">
+<inertial>
+<origin xyz="0 0 0.047" rpy= "0 -1.79 0"/>
+<mass value=".1"/>
+<inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
+</inertial>
+
+<visual>
+<origin xyz = "0 0 0.047" rpy= "0 -1.79 0"/>
+<geometry>
+<cylinder length="0.01" radius = "0.015"/>
+</geometry>
+<material name="red">
+<color rgba = "1 0 0 1"/>
+</material>
+</visual>
+
+<collision>
+<origin xyz = "0.024 0 0.041" rpy= "0 -1.79 0"/>
+<geometry>
+<cylinder length="0.01" radius = "0.015"/>
+</geometry>
+</collision>
+</link>
+
+<joint name="hip" type="revolute">
+<parent link="body"/>
+<child link="upper leg"/>
+<origin xyz= "0 0 0.094"/>
+<axis xyz = "0 1 0"/>
+<limit lower="-3.14" upper="0" effort="100" velocity="1.57"/>
+</joint>
+
+<!-- body -->
+<link name="body">
+<inertial>
+<origin xyz="0 0 0.035" rpy= "0 0.54 0"/>
+<mass value="1"/>
+<inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+</inertial>
+
+<visual>
+<origin xyz = "0 0 0" rpy= "0 0.54 0"/>
+<geometry>
+<sphere radius = "0.035"/>
+</geometry>
+<material name="blue">
+<color rgba = "0 0 1 1"/>
+</material>
+</visual>
+
+<collision>
+<origin xyz = "0 0 0" rpy= "0 0.54 0"/>
+<geometry>
+<sphere radius = "0.035"/>
+</geometry>
+</collision>
+</link>
+
+<!-- crashes when code after this line is added-->
+<link name="dummy_body1"></link>
+<link name="dummy_body2"></link>
+
+<joint name="ground_to_dummy1" type="prismatic">
+<parent link="world" />
+<child link="dummy_body1" />
+<origin xyz="0 0 0" />
+<axis xyz="1 0 0" />
+<dynamics damping="0"/>
+</joint>
+<joint name="dummy1_to_2" type="prismatic">
+<parent link="dummy_body1" />
+<child link="dummy_body2" />
+<origin xyz="0 0 0" />
+<axis xyz="0 0 1" />
+<dynamics damping="0"/>
+</joint>
+<joint name="dummy2_to_body" type="fixed">
+<parent link="dummy_body2" />
+<child link="body" />
+</joint>
+<!-- end crash code-->
+
+</robot>
