@@ -28,15 +28,6 @@
 <child link="ground" />
 </joint>
 
-<!--toe-->
-<link name="toe"></link>
-
-<joint name="toe_pos" type="fixed">
-<parent link="foot"/>
-<child link="toe"/>
-<origin xyz="0.82 0 -0.30"/>
-</joint>
-
 <!--foot-->
 <link name="foot">
 <inertial>
