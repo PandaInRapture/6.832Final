@@ -28,18 +28,27 @@
 <child link="ground" />
 </joint>
 
+<!--toe-->
+<link name="toe"></link>
+
+<joint name="toe_pos" type="fixed">
+<parent link="foot"/>
+<child link="toe"/>
+<origin xyz="0.82 0 -0.30"/>
+</joint>
+
 <!--foot-->
 <link name="foot">
 <inertial>
-<origin xyz="0 0 0.06" rpy= "0 0 0"/>
+<origin xyz="0 0 0.45" rpy= "0 -1.2 0"/>
 <mass value=".1"/>
 <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
 </inertial>
 
 <visual>
-<origin xyz = "0 0 0.06" rpy= "0 0 0"/>
+<origin xyz = "0 0 0.45" rpy= "0 -1.2 0"/>
 <geometry>
-<cylinder length="0.012" radius = "0.015"/>
+<cylinder length="0.12" radius = "0.015"/>
 </geometry>
 <material name="idk">
 <color rgba = "1 1 0 0.5"/>
@@ -47,9 +56,9 @@
 </visual>
 
 <collision>
-<origin xyz = "0 0 0.06" rpy= "0 0 0"/>
+<origin xyz = "0 0 0.45" rpy= "0 -1.2 0"/>
 <geometry>
-<cylinder length="0.012" radius = "0.015"/>
+<cylinder length="0.12" radius = "0.015"/>
 </geometry>
 </collision>
 </link>
@@ -57,7 +66,7 @@
 <joint name="ankle" type="revolute">
 <parent link="lower leg"/>
 <child link="foot"/>
-<origin xyz="0 0 0.012"/>
+<origin xyz="-0.48 0 -0.82"/>
 <axis xyz="0 1 0" />
 <limit lower="-3.14" upper="0"  effort="100" velocity="1.57"/>
 </joint>
@@ -65,15 +74,15 @@
 <!-- lower leg -->
 <link name="lower leg">
 <inertial>
-<origin xyz="0 0 0" rpy= "0 1.25 0"/>
+<origin xyz="0 0 0.48" rpy= "0 3.67 0"/>
 <mass value=".1"/>
 <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
 </inertial>
 
 <visual>
-<origin xyz = "0 0 0" rpy= "0 1.25 0"/>
+<origin xyz="0 0 0.48" rpy= "0 3.67 0"/>
 <geometry>
-<cylinder length="0.012" radius = "0.015"/>
+<cylinder length="0.12" radius = "0.015"/>
 </geometry>
 <material name="green2">
 <color rgba = "0 1 0 0.5"/>
@@ -81,9 +90,9 @@
 </visual>
 
 <collision>
-<origin xyz = "0 0 0" rpy= "0 1.25 0"/>
+<origin xyz="0 0 0.48" rpy= "0 3.67 0"/>
 <geometry>
-<cylinder length="0.012" radius = "0.015"/>
+<cylinder length="0.12" radius = "0.015"/>
 </geometry>
 </collision>
 </link>
@@ -91,7 +100,7 @@
 <joint name="knee" type="continuous">
 <parent link="upper leg"/>
 <child link="lower leg"/>
-<origin xyz="0 0 0.06"/>
+<origin xyz="0.39 0 -0.13" rpy="0 0 0"/>
 <axis xyz="0 1 0" />
 <limit effort="100" velocity="1.57"/>
 </joint>
@@ -99,13 +108,13 @@
 <!-- upper leg -->
 <link name="upper leg">
 <inertial>
-<origin xyz="0 0 0.047" rpy= "0 -1.79 0"/>
+<origin xyz="0 0 0.19" rpy= "0 -1.2 0"/>
 <mass value=".1"/>
 <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
 </inertial>
 
 <visual>
-<origin xyz = "0 0 0.047" rpy= "0 -1.79 0"/>
+<origin xyz = "0 0 0.19" rpy= "0 -1.2 0"/>
 <geometry>
 <cylinder length="0.01" radius = "0.015"/>
 </geometry>
@@ -115,7 +124,7 @@
 </visual>
 
 <collision>
-<origin xyz = "0.024 0 0.041" rpy= "0 -1.79 0"/>
+<origin xyz = "0 0 0.19" rpy= "0 -1.2 0"/>
 <geometry>
 <cylinder length="0.01" radius = "0.015"/>
 </geometry>
@@ -125,7 +134,7 @@
 <joint name="hip" type="revolute">
 <parent link="body"/>
 <child link="upper leg"/>
-<origin xyz= "0 0 0.094"/>
+<origin xyz= "0 0 -0.35"/>
 <axis xyz = "0 1 0"/>
 <limit lower="-3.14" upper="0" effort="100" velocity="1.57"/>
 </joint>
@@ -133,15 +142,15 @@
 <!-- body -->
 <link name="body">
 <inertial>
-<origin xyz="0 0 0.035" rpy= "0 0.54 0"/>
+<origin xyz="0 0 0" rpy= "0 0 0"/>
 <mass value="1"/>
 <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
 </inertial>
 
 <visual>
-<origin xyz = "0 0 0" rpy= "0 0.54 0"/>
+<origin xyz = "0 0 0" rpy= "0 0 0"/>
 <geometry>
-<sphere radius = "0.035"/>
+<sphere radius = "0.35"/>
 </geometry>
 <material name="blue">
 <color rgba = "0 0 1 1"/>
@@ -149,9 +158,9 @@
 </visual>
 
 <collision>
-<origin xyz = "0 0 0" rpy= "0 0.54 0"/>
+<origin xyz = "0 0 0" rpy= "0 0 0"/>
 <geometry>
-<sphere radius = "0.035"/>
+<sphere radius = "0.35"/>
 </geometry>
 </collision>
 </link>
