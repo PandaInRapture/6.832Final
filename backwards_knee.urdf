@@ -31,13 +31,13 @@
 <!--foot-->
 <link name="foot">
 <inertial>
-<origin xyz="0 0 0.45" rpy= "0 -1.2 0"/>
+<origin xyz="0 0 0.45" rpy= "0 5.08 0"/>
 <mass value=".1"/>
 <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
 </inertial>
 
 <visual>
-<origin xyz = "0 0 0.45" rpy= "0 -1.2 0"/>
+<origin xyz = "0 0 0.45" rpy= "0 5.08 0"/>
 <geometry>
 <cylinder length="0.9" radius = "0.15"/>
 </geometry>
@@ -47,7 +47,7 @@
 </visual>
 
 <collision>
-<origin xyz = "0 0 0.45" rpy= "0 -1.2 0"/>
+<origin xyz = "0 0 0.45" rpy= "0 5.08 0"/>
 <geometry>
 <cylinder length="0.9" radius = "0.015"/>
 </geometry>
@@ -99,13 +99,13 @@
 <!-- upper leg -->
 <link name="upper leg">
 <inertial>
-<origin xyz="0 0 0.19" rpy= "0 -1.2 0"/>
+<origin xyz="0 0 0.19" rpy= "0 5.08 0"/>
 <mass value=".1"/>
 <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
 </inertial>
 
 <visual>
-<origin xyz = "0 0 0.19" rpy= "0 -1.2 0"/>
+<origin xyz = "0 0 0.19" rpy= "0 5.08 0"/>
 <geometry>
 <cylinder length="0.38" radius = "0.15"/>
 </geometry>
@@ -115,7 +115,7 @@
 </visual>
 
 <collision>
-<origin xyz = "0 0 0.19" rpy= "0 -1.2 0"/>
+<origin xyz = "0 0 0.19" rpy= "0 5.08 0"/>
 <geometry>
 <cylinder length="0.38" radius = "0.15"/>
 </geometry>
@@ -141,7 +141,7 @@
 <visual>
 <origin xyz = "0 0 0" rpy= "0 0 0"/>
 <geometry>
-<sphere radius = "0.35"/>
+<sphere radius = "0.1"/>
 </geometry>
 <material name="blue">
 <color rgba = "0 0 1 1"/>
