@@ -57,7 +57,7 @@
 <joint name="ankle" type="revolute">
 <parent link="lower leg"/>
 <child link="foot"/>
-<origin xyz="0.48 0 -0.82"/>
+<origin xyz="0 0 0"/>
 <axis xyz="0 1 0" />
 <limit lower="-3.14" upper="0"  effort="100" velocity="1.57"/>
 </joint>
@@ -91,7 +91,7 @@
 <joint name="knee" type="continuous">
 <parent link="upper leg"/>
 <child link="lower leg"/>
-<origin xyz="-0.14 0 -0.38" rpy="0 0 0"/>
+<origin xyz="0 0 0" rpy="0 0 0"/>
 <axis xyz="0 1 0" />
 <limit effort="100" velocity="1.57"/>
 </joint>
