@@ -6,7 +6,7 @@
 <!--just for visualization, it is welded to world -->
 <link name="ground">
 <visual>
-<origin xyz="0 0 -1"/>
+<origin xyz="0 0 -2"/>
 <geometry>
 <box size="10 1 .5" />
 </geometry>
@@ -16,7 +16,7 @@
 </visual>
 
 <collision>
-<origin xyz="0 0 -1"/>
+<origin xyz="0 0 -2"/>
 <geometry>
 <box size="10 1 .5" />
 </geometry>
@@ -141,7 +141,7 @@
 <visual>
 <origin xyz = "0 0 0" rpy= "0 0 0"/>
 <geometry>
-<sphere radius = "0.35"/>
+<sphere radius = "0.1"/>
 </geometry>
 <material name="blue">
 <color rgba = "0 0 1 1"/>
