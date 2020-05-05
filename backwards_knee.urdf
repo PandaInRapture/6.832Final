@@ -178,5 +178,21 @@
 <child link="body" />
 </joint>
 
+<transmission name="hip"  type="SimpleTransmission">
+	<actuator name="hip"/>
+	<joint name="hip">
+</transmission>
+
+<transmission name="knee"  type="SimpleTransmission">
+	<actuator name="knee"/>
+	<joint name="knee">
+</transmission>
+
+<transmission name="ankle"  type="SimpleTransmission">
+	<actuator name="ankle"/>
+	<joint name="ankle">
+</transmission>
+
+
 
 </robot>
