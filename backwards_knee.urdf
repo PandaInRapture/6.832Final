@@ -39,7 +39,7 @@
 <visual>
 <origin xyz = "0 0 0.45" rpy= "0 -1.2 0"/>
 <geometry>
-<cylinder length="0.12" radius = "0.015"/>
+<cylinder length="0.9" radius = "0.15"/>
 </geometry>
 <material name="idk">
 <color rgba = "1 1 0 0.5"/>
@@ -49,7 +49,7 @@
 <collision>
 <origin xyz = "0 0 0.45" rpy= "0 -1.2 0"/>
 <geometry>
-<cylinder length="0.12" radius = "0.015"/>
+<cylinder length="0.9" radius = "0.015"/>
 </geometry>
 </collision>
 </link>
@@ -73,7 +73,7 @@
 <visual>
 <origin xyz="0 0 0.48" rpy= "0 3.67 0"/>
 <geometry>
-<cylinder length="0.12" radius = "0.015"/>
+<cylinder length="0.96" radius = "0.15"/>
 </geometry>
 <material name="green2">
 <color rgba = "0 1 0 0.5"/>
@@ -83,7 +83,7 @@
 <collision>
 <origin xyz="0 0 0.48" rpy= "0 3.67 0"/>
 <geometry>
-<cylinder length="0.12" radius = "0.015"/>
+<cylinder length="0.96" radius = "0.15"/>
 </geometry>
 </collision>
 </link>
@@ -107,7 +107,7 @@
 <visual>
 <origin xyz = "0 0 0.19" rpy= "0 -1.2 0"/>
 <geometry>
-<cylinder length="0.01" radius = "0.015"/>
+<cylinder length="0.38" radius = "0.15"/>
 </geometry>
 <material name="red">
 <color rgba = "1 0 0 1"/>
@@ -117,7 +117,7 @@
 <collision>
 <origin xyz = "0 0 0.19" rpy= "0 -1.2 0"/>
 <geometry>
-<cylinder length="0.01" radius = "0.015"/>
+<cylinder length="0.38" radius = "0.15"/>
 </geometry>
 </collision>
 </link>
