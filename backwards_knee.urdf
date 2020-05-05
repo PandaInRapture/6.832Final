@@ -6,7 +6,7 @@
 <!--just for visualization, it is welded to world -->
 <link name="ground">
 <visual>
-<origin xyz="0 0 -1"/>
+<origin xyz="0 0 -2"/>
 <geometry>
 <box size="10 1 .5" />
 </geometry>
@@ -39,7 +39,7 @@
 <visual>
 <origin xyz = "-0.43 0 0.15" rpy= "0 5.08 0"/>
 <geometry>
-<cylinder length="0.9" radius = "0.05"/>
+<cylinder length="0.96" radius = "0.05"/>
 </geometry>
 <material name="idk">
 <color rgba = "1 1 0 0.5"/>
@@ -49,7 +49,7 @@
 <collision>
 <origin xyz = "-0.43 0 0.15" rpy= "0 5.08 0"/>
 <geometry>
-<cylinder length="0.9" radius = "0.05"/>
+<cylinder length="0.96" radius = "0.05"/>
 </geometry>
 </collision>
 </link>
@@ -57,7 +57,7 @@
 <joint name="ankle" type="revolute">
 <parent link="lower leg"/>
 <child link="foot"/>
-<origin xyz="-0.48 0 -0.82"/>
+<origin xyz="0.48 0 -0.82"/>
 <axis xyz="0 1 0" />
 <limit lower="-3.14" upper="0"  effort="100" velocity="1.57"/>
 </joint>
@@ -65,13 +65,13 @@
 <!-- lower leg -->
 <link name="lower leg">
 <inertial>
-<origin xyz="0.24 0 0.41" rpy= "0 3.67 0"/>
+<origin xyz="0.24 0 -0.41" rpy= "0 3.67 0"/>
 <mass value=".1"/>
 <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
 </inertial>
 
 <visual>
-<origin xyz="0.24 0 0.41" rpy= "0 3.67 0"/>
+<origin xyz="0.24 0 -0.41" rpy= "0 3.67 0"/>
 <geometry>
 <cylinder length="0.96" radius = "0.05"/>
 </geometry>
@@ -81,7 +81,7 @@
 </visual>
 
 <collision>
-<origin xyz="0.24 0 0.41" rpy= "0 3.67 0"/>
+<origin xyz="0.24 0 -0.41" rpy= "0 3.67 0"/>
 <geometry>
 <cylinder length="0.96" radius = "0.05"/>
 </geometry>
@@ -91,7 +91,7 @@
 <joint name="knee" type="continuous">
 <parent link="upper leg"/>
 <child link="lower leg"/>
-<origin xyz="0.39 0 -0.13" rpy="0 0 0"/>
+<origin xyz="-0.14 0 -0.38" rpy="0 0 0"/>
 <axis xyz="0 1 0" />
 <limit effort="100" velocity="1.57"/>
 </joint>
@@ -99,15 +99,15 @@
 <!-- upper leg -->
 <link name="upper leg">
 <inertial>
-<origin xyz="-0.07 0 0.19" rpy= "0 5.08 0"/>
+<origin xyz="-0.07 0 -0.19" rpy= "0 5.08 0"/>
 <mass value=".1"/>
 <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
 </inertial>
 
 <visual>
-<origin xyz = "-0.07 0 0.19" rpy= "0 5.08 0"/>
+<origin xyz = "-0.07 0 -0.19" rpy= "0 5.08 0"/>
 <geometry>
-<cylinder length="0.38" radius = "0.05"/>
+<cylinder length="0.4" radius = "0.05"/>
 </geometry>
 <material name="red">
 <color rgba = "1 0 0 1"/>
@@ -115,9 +115,9 @@
 </visual>
 
 <collision>
-<origin xyz = "-0.07 0 0.19" rpy= "0 5.08 0"/>
+<origin xyz = "-0.07 0 -0.19" rpy= "0 5.08 0"/>
 <geometry>
-<cylinder length="0.38" radius = "0.05"/>
+<cylinder length="0.4" radius = "0.05"/>
 </geometry>
 </collision>
 </link>
@@ -141,10 +141,10 @@
 <visual>
 <origin xyz = "0 0 0" rpy= "0 0 0"/>
 <geometry>
-<sphere radius = "0.1"/>
+<sphere radius = "0.35"/>
 </geometry>
 <material name="blue">
-<color rgba = "0 0 1 .1"/>
+<color rgba = "0 0 1 .5"/>
 </material>
 </visual>
 
@@ -163,7 +163,7 @@
 <joint name="ground_to_dummy1" type="prismatic">
 <parent link="world" />
 <child link="dummy_body1" />
-<origin xyz="0 0 0" />
+<origin xyz="0 0 1" />
 <axis xyz="1 0 0" />
 <dynamics damping="0"/>
 </joint>
