@@ -162,7 +162,7 @@
 <joint name="ground_to_dummy1" type="prismatic">
 <parent link="world" />
 <child link="dummy_body1" />
-<origin xyz="0 0 2" />
+<origin xyz="0 0 3" />
 <axis xyz="1 0 0" />
 <dynamics damping="0"/>
 </joint>
@@ -178,20 +178,6 @@
 <child link="body" />
 </joint>
 
-<transmission name="hip"  type="SimpleTransmission">
-	<actuator name="hip"/>
-	<joint name="hip">
-</transmission>
-
-<transmission name="knee"  type="SimpleTransmission">
-	<actuator name="knee"/>
-	<joint name="knee">
-</transmission>
-
-<transmission name="ankle"  type="SimpleTransmission">
-	<actuator name="ankle"/>
-	<joint name="ankle">
-</transmission>
 
 
 
