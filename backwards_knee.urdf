@@ -6,7 +6,7 @@
 <!--just for visualization, it is welded to world -->
 <link name="ground">
 <visual>
-<origin xyz="0 0 -2"/>
+<origin xyz="0 0 0"/>
 <geometry>
 <box size="10 1 .5" />
 </geometry>
