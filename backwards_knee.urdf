@@ -162,7 +162,7 @@
 <joint name="ground_to_dummy1" type="prismatic">
 <parent link="world" />
 <child link="dummy_body1" />
-<origin xyz="0 0 3" />
+<origin xyz="0 0 4" />
 <axis xyz="1 0 0" />
 <dynamics damping="0"/>
 </joint>
