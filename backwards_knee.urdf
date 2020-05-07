@@ -58,7 +58,7 @@
 <parent link="lower leg"/>
 <child link="foot"/>
 <origin xyz="0 0 -0.96"/>
-<axis xyz="0 1 0" />
+<axis xyz="0 -1 0" />
 <limit lower="-3.14" upper="0"  effort="100" velocity="1.57"/>
 </joint>
 
@@ -92,7 +92,7 @@
 <parent link="upper leg"/>
 <child link="lower leg"/>
 <origin xyz="0 0 -0.4" rpy="0 0 0"/>
-<axis xyz="0 1 0" />
+<axis xyz="0 -1 0" />
 <limit effort="100" velocity="1.57"/>
 </joint>
 
@@ -126,7 +126,7 @@
 <parent link="body"/>
 <child link="upper leg"/>
 <origin xyz= "0 0 -0.35"/>
-<axis xyz = "0 1 0"/>
+<axis xyz = "0 -1 0"/>
 <limit lower="-3.14" upper="0" effort="100" velocity="1.57"/>
 </joint>
 
