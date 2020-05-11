@@ -188,4 +188,9 @@
 <joint name="knee"/>
 </transmission>
 
+<transmission type="SimpleTransmission" name="ankle">
+<actuator name="ankle_motor"/>
+<joint name="ankle"/>
+</transmission>
+
 </robot>
